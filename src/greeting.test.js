@@ -15,9 +15,23 @@ function fizzBuzz(n){
     else
         return n
 }
+function contains(n){
+    if(n % 10 == 3 || n / 10 == 3 )
+        return "fizz"
+    else if (n % 10 == 5 || n / 10 == 5 )
+        return "buzz"
+}
+/*function printList(){
+        for(let i = 1; i <= 100; i++){
+            return fizzBuzz(i)+contains(i)
+    }  
+}*/
 
 for(let i = 1; i <= 100; i++){
     fizzBuzz(i)
+    contains(i)
+    console.log(fizzBuzz(i))
+    console.log(contains(i))
 }
 
 test('con 1 imprime 1', ()=>{
@@ -34,5 +48,13 @@ test('con 5 imprime buzz', ()=>{
 
 test('con 15 imprime fizzBuzz', ()=>{
     expect(fizzBuzz(15)).toBe("fizzBuzz");
+})
+
+test('contiene 3 e imprime fizz', ()=>{
+    expect(contains(13)).toBe('fizz')
+})
+
+test('contiene 5 e imprime buzz', ()=>{
+    expect(contains(25)).toBe('buzz')
 })
 
